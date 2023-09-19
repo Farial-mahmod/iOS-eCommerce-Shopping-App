@@ -1,6 +1,6 @@
 import Foundation
 
-struct Product {
+struct Product: Codable, Identifiable, Hashable {
   var id: Int
   var title: String
   var price: Float
@@ -36,7 +36,7 @@ extension Product {
     }
 }
 
-struct Rating {
+struct Rating: Identifiable, Hashable {
   let rate: Float
   let count: Int = Int.random(in: 0...100)
 }
